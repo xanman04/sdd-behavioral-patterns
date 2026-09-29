@@ -60,8 +60,10 @@ class Command(ABC):
 
 class AddTicketCommand(Command):
     def __init__(self, cart: Cart, category: str, qty: int, unit_price: float):
-        # TODO: store cart, category, qty and unit_price for later use.
-        pass
+        self.cart = cart
+        self.category = category
+        self.qty = qty
+        self.unit_price = unit_price
 
     def execute(self) -> None:
         # TODO: add `qty` tickets of `category` at `unit_price` to the cart.
